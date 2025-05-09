@@ -17,8 +17,8 @@
         compatible = "zmk,combos";
 
         tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
         };
 
         shift_tab {
@@ -44,9 +44,10 @@
 
     macros {
         to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &bt MACRO_PLACEHOLDER>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 6>, <&macro_tap>, <&bt BT_SEL 0>;
+
             label = "TO_LAYER_0";
         };
     };
@@ -67,10 +68,10 @@
 
         WIN-default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                                                          &kp Y           &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F             &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H           &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp COLON                          &kp SEMICOLON  &kp N           &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_MUHENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &kp INT_HENKAN                             &kp DEL
+&kp Q             &kp W         &kp E         &kp R             &kp T                                        &kp Y           &kp U  &lt 5 I    &kp O    &kp P
+&mt LCTRL A       &kp S         &kp D         &kp F             &kp G        &kp TAB          &kp BACKSPACE  &kp H           &kp J  &kp K      &kp L    &kp SQT
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp COLON        &kp ENTER      &kp N           &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_MUHENKAN  &lt 3 SPACE  &lt 2 ENTER      &lt 3 SPACE    &kp INT_HENKAN                             &kp AT_SIGN
             >;
         };
 
