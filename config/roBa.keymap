@@ -80,7 +80,7 @@
 &kp EQUAL              &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp ASTERISK                                               &kp DOT    &kp ASTERISK  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
 &kp LEFT_PARENTHESIS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS     &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp SLASH  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
 &kp RIGHT_PARENTHESIS  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS      &kp EQUAL                    &trans          &kp EQUAL  &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
-&kp LCTRL              &kp KP_NUMBER_0  &kp SLASH        &trans           &trans        &trans                       &trans          &trans                                               &kp NUMBER_0
+&kp LCTRL              &kp KP_NUMBER_0  &kp SLASH        &trans           &lt 3 SPACE   &trans                       &lt 3 SPACE     &trans                                               &kp NUMBER_0
             >;
         };
 
