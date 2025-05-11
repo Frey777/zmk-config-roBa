@@ -43,12 +43,44 @@
     };
 
     macros {
-        to_layer_0: to_layer_0 {
+        toMacStudio: to_layer_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 6>, <&macro_tap>, <&bt BT_SEL 0>;
+            bindings = <&to 6>, <&macro_tap>, <&bt BT_SEL 0>;
 
             label = "TO_LAYER_0";
+        };
+
+        toWindows: toWindows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0>, <&macro_tap>, <&bt BT_SEL 1>;
+
+            label = "TOWINDOWS";
+        };
+
+        toiPhone: toiPhone {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 6>, <&macro_tap>, <&bt BT_SEL 2>;
+
+            label = "TOIPHONE";
+        };
+
+        toiPad13: toiPad13 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 6>, <&macro_tap>, <&bt BT_SEL 3>;
+
+            label = "TOIPAD13";
+        };
+
+        toiPad11: toiPad11 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 6>, <&macro_tap>, <&bt BT_SEL 4>;
+
+            label = "TOIPAD11";
         };
     };
 
@@ -56,7 +88,7 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            bindings = <&mo>, <&toMacStudio>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -124,10 +156,10 @@
 
         BT-Layer {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &to 0       &bootloader  &trans        &trans        &trans        &trans        &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &to 7       &trans       &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans        &trans        &trans        &trans                           &toMacStudio  &toWindows  &toiPhone  &toiPad13  &toiPad11
+&trans  &trans        &trans        &trans        &trans  &to 0       &bootloader  &trans        &trans      &trans     &trans     &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &to 7       &trans       &trans        &trans      &trans     &trans     &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                          &bt BT_CLR_ALL
             >;
         };
 
