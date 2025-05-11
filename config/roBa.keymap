@@ -87,8 +87,8 @@
         ARROW {
             bindings = <
 &kp LS(NUMBER_1)  &kp LS(NUMBER_2)    &kp LS(NUMBER_3)  &kp LS(NUMBER_4)     &kp LS(N5)                              &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
-&kp SEMICOLON     &kp LA(LEFT_ARROW)  &kp UP_ARROW      &kp LA(RIGHT_ARROW)  &kp END     &trans           &kp COLON  &kp MINUS         &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp PLUS          &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &trans      &trans           &kp SEMI   &kp LS(MINUS)     &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
+&kp HOME          &kp LA(LEFT_ARROW)  &kp UP_ARROW      &kp LA(RIGHT_ARROW)  &kp END     &trans           &kp COLON  &kp MINUS         &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&kp LEFT_SHIFT    &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &trans      &trans           &kp SEMI   &kp LS(MINUS)     &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
 &trans            &trans              &trans            &trans               &trans      &lt 3 ENTER      &trans     &trans                                                                   &kp UNDERSCORE
             >;
 
