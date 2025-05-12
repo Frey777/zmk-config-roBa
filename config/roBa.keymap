@@ -106,7 +106,7 @@
         WIN-default_layer {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R             &kp T                                         &kp Y           &kp U  &lt 5 I    &kp O    &kp BACKSPACE
-&mt LCTRL A       &kp S         &kp D         &kp F             &kp G        &lt 4 TAB           &kp P        &kp H           &kp J  &kp K      &kp L    &kp ENTER
+&mt LCTRL A       &kp S         &kp D         &kp F             &kp G        &lt 9 TAB           &kp P        &kp H           &kp J  &kp K      &kp L    &kp ENTER
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp LEFT_SHIFT      &lt 6 MINUS  &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_MUHENKAN  &lt 2 SPACE  &lt 1 ENTER         &lt 2 SPACE  &kp INT_HENKAN                             &kp AT_SIGN
             >;
@@ -171,7 +171,7 @@
         MacDefault {
             bindings = <
 &kp Q             &kp W      &kp E         &kp R           &kp T                                         &kp Y           &kp U  &lt 5 I    &kp O    &kp BACKSPACE
-&mt LEFT_WIN A    &kp S      &kp D         &kp F           &kp G        &lt 4 TAB           &kp P        &kp H           &kp J  &kp K      &kp L    &kp ENTER
+&mt LEFT_WIN A    &kp S      &kp D         &kp F           &kp G        &lt 9 TAB           &kp P        &kp H           &kp J  &kp K      &kp L    &kp ENTER
 &mt LEFT_SHIFT Z  &kp X      &kp C         &kp V           &kp B        &kp LEFT_SHIFT      &lt 6 MINUS  &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LEFT_WIN      &kp LCTRL  &kp LEFT_ALT  &kp LANGUAGE_2  &lt 8 SPACE  &lt 1 ENTER         &lt 8 SPACE  &kp LANGUAGE_1                             &kp AT_SIGN
             >;
@@ -186,6 +186,15 @@
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+        };
+
+        layer_9 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans           &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &msc MOVE_X(15)  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &msc MOVE_Y(15)  &mkp MB2  &mkp MB3
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                       &trans
+            >;
         };
     };
 };
