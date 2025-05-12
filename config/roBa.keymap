@@ -46,7 +46,7 @@
         toMacStudio: to_layer_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 6>, <&macro_tap>, <&bt BT_SEL 0>;
+            bindings = <&to 7>, <&macro_tap>, <&bt BT_SEL 0>;
 
             label = "TO_LAYER_0";
         };
@@ -62,7 +62,7 @@
         toiPhone: toiPhone {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 6>, <&macro_tap>, <&bt BT_SEL 2>;
+            bindings = <&to 7>, <&macro_tap>, <&bt BT_SEL 2>;
 
             label = "TOIPHONE";
         };
@@ -70,7 +70,7 @@
         toiPad13: toiPad13 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 6>, <&macro_tap>, <&bt BT_SEL 3>;
+            bindings = <&to 7>, <&macro_tap>, <&bt BT_SEL 3>;
 
             label = "TOIPAD13";
         };
@@ -78,7 +78,7 @@
         toiPad11: toiPad11 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 6>, <&macro_tap>, <&bt BT_SEL 4>;
+            bindings = <&to 7>, <&macro_tap>, <&bt BT_SEL 4>;
 
             label = "TOIPAD11";
         };
