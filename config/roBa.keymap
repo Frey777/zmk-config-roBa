@@ -40,6 +40,11 @@
             bindings = <&lt_to_layer_0 3 0>;
             key-positions = <38 39>;
         };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <9 8>;
+        };
     };
 
     macros {
@@ -100,10 +105,10 @@
 
         WIN-default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                                           &kp Y           &kp U  &lt 5 I    &kp O    &kp P
-&mt LCTRL A       &kp S         &kp D         &kp F             &kp G        &kp TAB             &kp BACKSPACE  &kp H           &kp J  &kp K      &kp L    &kp ENTER
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp LEFT_SHIFT      &lt 6 MINUS    &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_MUHENKAN  &lt 2 SPACE  &lt 1 ENTER         &lt 2 SPACE    &kp INT_HENKAN                             &kp AT_SIGN
+&kp Q             &kp W         &kp E         &kp R             &kp T                                         &kp Y           &kp U  &lt 5 I    &kp O    &kp BACKSPACE
+&mt LCTRL A       &kp S         &kp D         &kp F             &kp G        &lt 4 TAB           &kp P        &kp H           &kp J  &kp K      &kp L    &kp ENTER
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp LEFT_SHIFT      &lt 6 MINUS  &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_MUHENKAN  &lt 2 SPACE  &lt 1 ENTER         &lt 2 SPACE  &kp INT_HENKAN                             &kp AT_SIGN
             >;
         };
 
@@ -165,10 +170,10 @@
 
         MacDefault {
             bindings = <
-&kp Q             &kp W      &kp E         &kp R           &kp T                                           &kp Y           &kp U  &lt 5 I    &kp O    &kp P
-&mt LEFT_WIN A    &kp S      &kp D         &kp F           &kp G        &kp TAB             &kp BACKSPACE  &kp H           &kp J  &kp K      &kp L    &kp ENTER
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V           &kp B        &kp LEFT_SHIFT      &lt 6 MINUS    &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LEFT_WIN      &kp LCTRL  &kp LEFT_ALT  &kp LANGUAGE_2  &lt 8 SPACE  &lt 1 ENTER         &lt 8 SPACE    &kp LANGUAGE_1                             &kp AT_SIGN
+&kp Q             &kp W      &kp E         &kp R           &kp T                                         &kp Y           &kp U  &lt 5 I    &kp O    &kp BACKSPACE
+&mt LEFT_WIN A    &kp S      &kp D         &kp F           &kp G        &lt 4 TAB           &kp P        &kp H           &kp J  &kp K      &kp L    &kp ENTER
+&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V           &kp B        &kp LEFT_SHIFT      &lt 6 MINUS  &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp LEFT_WIN      &kp LCTRL  &kp LEFT_ALT  &kp LANGUAGE_2  &lt 8 SPACE  &lt 1 ENTER         &lt 8 SPACE  &kp LANGUAGE_1                             &kp AT_SIGN
             >;
         };
 
