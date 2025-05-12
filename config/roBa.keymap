@@ -108,7 +108,7 @@
 &kp Q             &kp W         &kp E         &kp R             &kp T                                         &kp Y           &kp U  &lt 5 I    &kp O    &kp BACKSPACE
 &mt LCTRL A       &kp S         &kp D         &kp F             &kp G        &lt 9 TAB           &kp P        &kp H           &kp J  &lt 5 K    &kp L    &lt 9 ENTER
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp LEFT_SHIFT      &lt 6 MINUS  &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_MUHENKAN  &lt 2 SPACE  &lt 1 ENTER         &lt 2 SPACE  &kp INT_HENKAN                             &kp LS(LEFT_BRACKET)
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_MUHENKAN  &lt 2 SPACE  &lt 1 ENTER         &lt 2 SPACE  &kp INT_HENKAN                             &kp LEFT_BRACKET
             >;
         };
 
@@ -126,7 +126,7 @@
 &kp LS(NUMBER_1)  &kp LS(NUMBER_2)    &kp LS(NUMBER_3)  &kp LS(NUMBER_4)     &kp LS(N5)                              &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
 &kp HOME          &kp LA(LEFT_ARROW)  &kp UP_ARROW      &kp LA(RIGHT_ARROW)  &kp END     &trans           &kp COLON  &kp MINUS         &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
 &kp LEFT_SHIFT    &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &trans      &trans           &kp SEMI   &kp LS(MINUS)     &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
-&trans            &trans              &trans            &trans               &trans      &lt 3 ENTER      &trans     &trans                                                                   &kp INT_RO
+&trans            &trans              &trans            &trans               &trans      &lt 3 ENTER      &trans     &trans                                                                   &kp LS(INT_RO)
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
