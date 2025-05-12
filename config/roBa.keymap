@@ -190,9 +190,9 @@
 
         layer_9 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans            &trans            &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &msc MOVE_X(-15)  &msc MOVE_Y(-15)  &msc MOVE_X(15)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1          &msc MOVE_Y(15)   &mkp MB2         &mkp MB3
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans           &trans            &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &msc MOVE_X(15)  &msc MOVE_Y(-15)  &msc MOVE_X(-15)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1         &msc MOVE_Y(15)   &mkp MB2          &mkp MB3
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                       &trans
             >;
         };
