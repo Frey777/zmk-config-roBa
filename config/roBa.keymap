@@ -16,9 +16,9 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
+        esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <0 1>;
+            key-positions = <0 10>;
         };
 
         shift_tab {
@@ -41,9 +41,9 @@
             key-positions = <16 17>;
         };
 
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <0 1>;
         };
     };
 
@@ -85,6 +85,34 @@
             bindings = <&to 1>, <&macro_tap>, <&bt BT_SEL 4>;
 
             label = "TOIPAD11";
+        };
+
+        GUID: GUID {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp S &kp O &kp K &kp U &kp N &kp O &kp N0 &kp N0 &kp N2>;
+            label = "GUID";
+        };
+
+        pwcpass: pwcpass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(I) &kp L &kp I &kp V &kp E &kp I &kp N &kp LS(M) &kp A &kp R &kp N7 &kp EXCL>;
+            label = "PWCPASS";
+        };
+
+        macpass: macpass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp L &kp T &kp E &kp R &kp N &kp A &kp T &kp I &kp V &kp E>;
+            label = "MACPASS";
+        };
+
+        onepassword: onepassword {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(I) &kp L &kp I &kp V &kp E &kp I &kp N &kp LS(J) &kp A &kp P &kp A &kp N &kp N7 &kp EXCL>;
+            label = "ONEPASSWORD";
         };
     };
 
@@ -131,10 +159,10 @@
 
         ARROW {
             bindings = <
-&kp LS(NUMBER_1)  &kp LS(NUMBER_2)    &kp LS(NUMBER_3)  &kp LS(NUMBER_4)     &kp LS(N5)                             &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
-&kp HOME          &kp LA(LEFT_ARROW)  &kp UP_ARROW      &kp LA(RIGHT_ARROW)  &kp END     &trans           &kp SQT   &kp MINUS         &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp LEFT_SHIFT    &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &trans      &trans           &kp SEMI  &kp LS(MINUS)     &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
-&trans            &trans              &trans            &trans               &trans      &lt 6 ENTER      &trans    &trans                                                                   &kp LS(INT_RO)
+&kp LS(NUMBER_1)  &kp LS(NUMBER_2)    &kp LS(NUMBER_3)  &kp LS(NUMBER_4)     &kp LS(N5)                              &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
+&kp HOME          &kp LA(LEFT_ARROW)  &kp UP_ARROW      &kp LA(RIGHT_ARROW)  &kp END     &GUID            &kp COLON  &kp MINUS         &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&kp LEFT_SHIFT    &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &trans      &pwcpass         &kp SEMI   &kp LS(MINUS)     &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
+&trans            &trans              &trans            &trans               &trans      &lt 6 ENTER      &trans     &trans                                                                   &kp LS(INT_RO)
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
