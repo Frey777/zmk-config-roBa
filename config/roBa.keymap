@@ -157,7 +157,7 @@
             bindings = <
 &kp EQUAL              &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SQT)                                                     &kp DOT    &kp ASTERISK  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
 &kp LEFT_PARENTHESIS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS          &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp SLASH  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
-&kp RIGHT_PARENTHESIS  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp LS(SEMICOLON)  &kp EQUAL                    &trans          &kp EQUAL  &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
+&kp RIGHT_PARENTHESIS  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp LS(SEMICOLON)  &kp EQUAL                    &kp LS(SLASH)   &kp EQUAL  &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
 &kp LCTRL              &kp KP_NUMBER_0  &kp SLASH        &trans           &lt 6 SPACE        &trans                       &lt 6 SPACE     &trans                                               &kp NUMBER_0
             >;
         };
@@ -193,10 +193,10 @@
 
         FUNCTION {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5                      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&kp F1      &kp F2             &kp F3           &kp F4  &kp F5                      &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&kp N1      &kp N2             &kp N3           &kp N4  &kp N5  &to 0       &trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
+&trans      &trans             &trans           &trans  &trans  &tog 1      &trans  &trans  &trans  &trans  &trans  &trans
+&kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans  &trans      &trans  &trans                          &kp LS(INTERNATIONAL_1)
             >;
         };
 
