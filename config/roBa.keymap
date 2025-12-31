@@ -1,29 +1,20 @@
+#include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 4 10000>;
+};
+
+#define MOUSE 4
+#define SCROLL 5
+#define NUM 6
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-};
-
-&trackball {
-    automouse-layer = <4>;
-    scroll-layers = <5>;
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
 };
 
 / {
@@ -69,20 +60,35 @@
             bindings = <&mo 5>;
             key-positions = <15 31>;
         };
+
+        del2 {
+            bindings = <&kp DELETE>;
+            key-positions = <9 8 7>;
+        };
+
+        Lshift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <22 23>;
+        };
+
+        Rshift {
+            bindings = <&kp RIGHT_SHIFT>;
+            key-positions = <33 32>;
+        };
     };
 
     macros {
         GUID: GUID {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp S &kp O &kp K &kp U &kp N &kp O &kp N0 &kp N0 &kp N2>;
+            bindings = <&kp S &kp H &kp U &kp N &kp DOT &kp S &kp DOT &kp O &kp K &kp U &kp N &kp O &kp LEFT_BRACKET &kp P &kp W &kp C &kp DOT &kp C &kp O &kp M>;
             label = "GUID";
         };
 
         pwcpass: pwcpass {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(I) &kp L &kp I &kp V &kp E &kp I &kp N &kp LS(M) &kp A &kp R &kp N7 &kp EXCL>;
+            bindings = <&kp LS(I) &kp L &kp I &kp V &kp E &kp I &kp N &kp LS(J) &kp U &kp N &kp E &kp N2 &kp N4 &kp N1 &kp N9 &kp N8 &kp N7 &kp EXCL>;
             label = "PWCPASS";
         };
 
@@ -99,6 +105,55 @@
             bindings = <&kp LS(I) &kp L &kp I &kp V &kp E &kp I &kp N &kp LS(J) &kp A &kp P &kp A &kp N &kp N7 &kp EXCL>;
             label = "ONEPASSWORD";
         };
+
+        toMacStudio: toMacStudio {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "TOMACSTUDIO";
+        };
+
+        toiPad13: toiPad13 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "TOIPAD13";
+        };
+
+        toiPad11: toiPad11 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "TOIPAD11";
+        };
+
+        toiPhone: toiPhone {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "TOIPHONE";
+        };
+
+        JRAticketSmartsheet2: JTAticketSmartsheet {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TAB &kp LEFT_SHIFT &kp ENTER &kp TAB &kp TAB &kp ENTER>;
+            label = "JTATICKETSMARTSHEET";
+        };
+
+        JRAticketSmartsheet1: JRAticketSmartsheet1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TAB &kp LEFT_SHIFT &kp ENTER &kp TAB &kp ENTER>;
+            label = "JRATICKETSMARTSHEET1";
+        };
+
+        toga: toga {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&trans &tog 4>;
+            label = "TOGA";
+        };
     };
 
     behaviors {
@@ -110,6 +165,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        Mouse_Rotate_encoder: Mouse_Rotate_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MOUSE_ROTATE_ENCODER";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
     };
 
     keymap {
@@ -117,37 +179,41 @@
 
         WIN-default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                                           &kp Y           &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F             &kp G        &lt 9 TAB           &kp BACKSPACE  &kp H           &kp J  &kp K      &kp L    &lt 9 ENTER
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B        &kp LEFT_SHIFT      &lt 7 SLASH    &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT MINUS
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &kp INT_MUHENKAN  &lt 3 SPACE  &lt 2 ENTER         &lt 3 SPACE    &kp INT_HENKAN                             &mt LEFT_CONTROL LEFT_BRACKET
+&kp Q      &kp W         &kp E         &kp R                        &kp T                                           &kp Y                            &kp U  &kp I      &kp O    &kp P
+&kp A      &kp S         &kp D         &kp F                        &kp G        &lt 9 TAB           &kp BACKSPACE  &kp H                            &kp J  &kp K      &kp L    &lt 9 ENTER
+&kp Z      &kp X         &kp C         &kp V                        &kp B        &kp LEFT_SHIFT      &lt 7 SLASH    &kp N                            &kp M  &kp COMMA  &kp DOT  &kp MINUS
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 2 ENTER         &lt 3 SPACE    &mt RIGHT_SHIFT INTERNATIONAL_4                             &mt LEFT_CONTROL LEFT_BRACKET
             >;
+
+            sensor-bindings = <&Mouse_Rotate_encoder>;
         };
 
         MacDefault {
             bindings = <
-&kp Q             &kp W      &kp E         &kp R           &kp T                                           &kp Y           &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S      &kp D         &kp F           &kp G        &lt 9 TAB           &kp BACKSPACE  &kp H           &kp J  &kp K      &kp L    &lt 9 ENTER
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V           &kp B        &kp LEFT_SHIFT      &lt 7 SLASH    &kp N           &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT MINUS
-&kp LEFT_WIN      &kp LCTRL  &kp LEFT_ALT  &kp LANGUAGE_2  &lt 8 SPACE  &lt 2 ENTER         &lt 8 SPACE    &kp LANGUAGE_1                             &mt LEFT_WIN AT_SIGN
+&kp Q         &kp W      &kp E         &kp R                      &kp T                                           &kp Y                       &kp U  &kp I      &kp O    &kp P
+&kp A         &kp S      &kp D         &kp F                      &kp G        &lt 9 TAB           &kp BACKSPACE  &kp H                       &kp J  &kp K      &kp L    &lt 9 ENTER
+&kp Z         &kp X      &kp C         &kp V                      &kp B        &kp LEFT_SHIFT      &lt 7 SLASH    &kp N                       &kp M  &kp COMMA  &kp DOT  &kp MINUS
+&kp LEFT_WIN  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 8 SPACE  &lt 2 ENTER         &lt 8 SPACE    &mt RIGHT_SHIFT LANGUAGE_1                             &mt LEFT_WIN AT_SIGN
             >;
+
+            sensor-bindings = <&Mouse_Rotate_encoder>;
         };
 
         NUM {
             bindings = <
-&kp EQUAL              &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SQT)                                                    &kp DOT    &kp ASTERISK  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
-&kp LEFT_PARENTHESIS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS          &kp LC(LA(KP_NUMBER_0))      &kp DELETE     &kp SLASH  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
-&kp RIGHT_PARENTHESIS  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp LS(SEMICOLON)  &kp EQUAL                    &kp LS(SLASH)  &kp EQUAL  &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
-&kp LCTRL              &kp KP_NUMBER_0  &kp SLASH        &trans           &lt 6 SPACE        &trans                       &lt 6 SPACE    &trans                                               &kp NUMBER_0
+&kp EQUAL              &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SQT)                                              &kp DOT    &kp ASTERISK  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
+&kp LEFT_PARENTHESIS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS    &kp LC(LA(KP_NUMBER_0))      &kp DELETE     &kp SLASH  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
+&kp RIGHT_PARENTHESIS  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS     &kp EQUAL                    &kp LS(SLASH)  &kp EQUAL  &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
+&kp LCTRL              &kp KP_NUMBER_0  &kp SLASH        &trans           &lt 6 SPACE  &trans                       &lt 6 SPACE    &trans                                               &kp NUMBER_0
             >;
         };
 
         ARROW {
             bindings = <
-&kp LS(NUMBER_1)  &kp LS(NUMBER_2)    &kp LS(NUMBER_3)  &kp LS(NUMBER_4)     &kp LS(N5)                               &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
-&kp HOME          &kp LA(LEFT_ARROW)  &kp UP_ARROW      &kp LA(RIGHT_ARROW)  &kp END     &GUID            &kp DELETE  &kp MINUS         &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp LEFT_SHIFT    &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &trans      &pwcpass         &kp SEMI    &kp LS(MINUS)     &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
-&trans            &trans              &trans            &trans               &trans      &lt 6 ENTER      &trans      &trans                                                                   &kp LS(INT_RO)
+&kp LS(NUMBER_1)    &kp LS(NUMBER_2)    &kp LS(NUMBER_3)     &kp LS(NUMBER_4)     &kp LS(N5)                                          &kp LS(NUMBER_6)       &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
+&kp HOME            &kp LA(LEFT_ARROW)  &kp UP_ARROW         &kp LA(RIGHT_ARROW)  &kp END     &GUID            &kp DELETE             &kp MINUS              &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&kp LEFT_SHIFT      &kp LEFT_ARROW      &kp DOWN_ARROW       &kp RIGHT_ARROW      &trans      &pwcpass         &kp SEMI               &kp LS(MINUS)          &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
+&kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)    &kp LG(RIGHT_ARROW)  &kp LG(DOWN_ARROW)   &trans      &lt 6 ENTER      &JRAticketSmartsheet1  &JRAticketSmartsheet2                                                         &kp LS(INT_RO)
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -182,7 +248,7 @@
 
         BT-Layer {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &kp NUMBER_1  &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &to 0       &bootloader  &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &to 1       &trans       &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
@@ -191,10 +257,10 @@
 
         MacArrow {
             bindings = <
-&kp LS(NUMBER_1)  &kp LS(NUMBER_2)    &kp LS(NUMBER_3)  &kp LS(NUMBER_4)     &kp LS(N5)                                    &kp LS(NUMBER_6)  &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
-&kp SEMICOLON     &kp LG(LEFT_ARROW)  &kp UP_ARROW      &kp LG(RIGHT_ARROW)  &kp GRAVE      &macpass          &kp SQT      &kp MINUS         &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp LS(SEMI)      &kp LEFT_ARROW      &kp DOWN_ARROW    &kp RIGHT_ARROW      &kp LS(GRAVE)  &onepassword      &kp LS(SQT)  &kp LS(MINUS)     &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
-&trans            &trans              &trans            &trans               &trans         &lt 6 ENTER       &trans       &trans                                                                   &kp UNDERSCORE
+&kp LS(NUMBER_1)        &kp LS(NUMBER_2)      &kp LS(NUMBER_3)         &kp LS(NUMBER_4)        &kp LS(N5)                                              &kp LS(NUMBER_6)       &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
+&kp SEMICOLON           &kp LG(LEFT_ARROW)    &kp UP_ARROW             &kp LG(RIGHT_ARROW)     &kp GRAVE      &macpass          &kp SQT                &kp MINUS              &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
+&kp LS(SEMI)            &kp LEFT_ARROW        &kp DOWN_ARROW           &kp RIGHT_ARROW         &kp LS(GRAVE)  &onepassword      &kp LS(SQT)            &kp LS(MINUS)          &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
+&kp LG(LA(LEFT_ARROW))  &kp LA(LG(UP_ARROW))  &kp LA(LG(RIGHT_ARROW))  &kp LA(LG(DOWN_ARROW))  &trans         &lt 6 ENTER       &JRAticketSmartsheet1  &JRAticketSmartsheet2                                                         &kp UNDERSCORE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
