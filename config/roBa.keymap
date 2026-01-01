@@ -200,6 +200,15 @@
 
             tap-ms = <20>;
         };
+
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_LEFT_RIGHT";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
+            tap-ms = <20>;
+        };
     };
 
     keymap {
