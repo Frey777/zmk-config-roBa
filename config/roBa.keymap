@@ -189,7 +189,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_ROTATE_ENCODER";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
         };
 
         encoder_msc_down_up: encoder_msc_down_up {
