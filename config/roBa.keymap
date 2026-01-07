@@ -167,13 +167,6 @@
             label = "JRATICKETSMARTSHEET1";
         };
 
-        toga: toga {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&trans &tog 4>;
-            label = "TOGA";
-        };
-
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -191,7 +184,16 @@
             bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
             label = "KP_exit_AML";
         };
-};
+
+        ke_exit_AML_tr: ke_exit_AML_tr {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&trans &exit_AML>;
+            label = "KE_EXIT_AML_TR";
+        };
+    };
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
@@ -245,7 +247,7 @@
             flavor = "balanced";
             quick-tap-ms = <200>;
         };
-};
+    };
 
     keymap {
         compatible = "zmk,keymap";
