@@ -190,7 +190,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&trans &exit_AML>;
+            bindings = <&macro_param_1to1 &trans &exit_AML>;
             label = "KE_EXIT_AML_TR";
         };
     };
