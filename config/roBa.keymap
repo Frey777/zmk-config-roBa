@@ -109,7 +109,7 @@
             label = "GUID";
         };
 
-        pwcpass: pwcpass {
+        pcpass: pwcpass {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(I) &kp L &kp I &kp V &kp E &kp I &kp N &kp LS(J) &kp U &kp N &kp E &kp N2 &kp N4 &kp N1 &kp N9 &kp N8 &kp N7 &kp EXCL>;
@@ -305,7 +305,7 @@
             bindings = <
 &kp LS(NUMBER_1)    &kp LS(NUMBER_2)    &kp LS(NUMBER_3)     &kp LS(NUMBER_4)     &kp LS(N5)                                          &kp LS(NUMBER_6)       &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
 &kp HOME            &kp LA(LEFT_ARROW)  &kp UP_ARROW         &kp LA(RIGHT_ARROW)  &kp END     &GUID            &kp DELETE             &kp MINUS              &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp LEFT_SHIFT      &kp LEFT_ARROW      &kp DOWN_ARROW       &kp RIGHT_ARROW      &GUID       &pwcpass         &kp SEMI               &kp LS(MINUS)          &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
+&kp LEFT_SHIFT      &kp LEFT_ARROW      &kp DOWN_ARROW       &kp RIGHT_ARROW      &GUID       &pcpass          &kp SEMI               &kp LS(MINUS)          &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
 &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)    &kp LG(RIGHT_ARROW)  &kp LG(DOWN_ARROW)   &trans      &lt 6 ENTER      &JRAticketSmartsheet1  &JRAticketSmartsheet2                                                         &kp LS(INT_RO)
             >;
 
