@@ -20,9 +20,7 @@
 };
 
 &trackball {
-    scroll-layers = <5>;
-
-    arrows {
+arrows {
         layers = <3 8>;
         bindings =
             <&kp RIGHT_ARROW>,
