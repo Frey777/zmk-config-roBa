@@ -130,17 +130,19 @@
             label = "ONEPASSWORD";
         };
 
-        toMacStudio: toMacStudio {
+        toMac: toMacStudio {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 200>, <&to 1>;
+
             label = "TOMACSTUDIO";
         };
 
         toiPad13: toiPad13 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&bt BT_SEL 2>, <&macro_wait_time 200>, <&to 1>;
+
             label = "TOIPAD13";
         };
 
@@ -198,13 +200,29 @@
             bindings = <&trans &exit_AML>;
             label = "KE_EXIT_AML_TR";
         };
+
+        toWIN: toWIN {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>, <&macro_wait_time 200>, <&to 0>;
+
+            label = "TOWIN";
+        };
+
+        toiPadmini: toiPadmini {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3>, <&macro_wait_time 200>, <&to 1>;
+
+            label = "TOIPADMINI";
+        };
     };
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&toMacStudio>;
+            bindings = <&mo>, <&toMac>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
