@@ -97,7 +97,7 @@
 
         kakuninnyou {
             bindings = <&trans>;
-            key-positions = <34 30 31 32 33>;
+            key-positions = <34 30 31 32 33 42>;
         };
     };
 
