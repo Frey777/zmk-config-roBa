@@ -76,7 +76,7 @@
         };
 
         scroll {
-            bindings = <&mo 5>;
+            bindings = <&mo 6>;
             key-positions = <31 27>;
         };
 
@@ -179,7 +179,7 @@
             wait-ms = <0>;
             tap-ms = <0>;
             #binding-cells = <0>;
-            bindings = <&tog_off MOUSE>;
+            bindings = <&tog_off 5>;
             label = "exit_AML";
         };
 
@@ -215,6 +215,14 @@
             bindings = <&bt BT_SEL 3>, <&macro_wait_time 200>, <&to 1>;
 
             label = "TOIPADMINI";
+        };
+
+        toandroid: toandroid {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3>, <&macro_wait_time 200>, <&to 2>;
+
+            label = "TOANDROID";
         };
     };
 
@@ -288,10 +296,10 @@
 
         WIN-default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                        &kp T                                        &kp Y                            &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                        &kp G        &mkp MB3         &kp BACKSPACE  &kp H                            &kp J  &kp K      &kp L    &lt 9 ENTER
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &lt 9 TAB        &lt 7 SLASH    &kp N                            &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT MINUS
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 2 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT INTERNATIONAL_4                             &mt LEFT_CONTROL LEFT_BRACKET
+&kp Q      &kp W         &kp E         &kp R                        &kp T                                        &kp Y                            &kp U  &kp I      &kp O    &kp P
+&kp A      &kp S         &kp D         &kp F                        &kp G        &mkp MB3         &kp BACKSPACE  &kp H                            &kp J  &kp K      &kp L    &kp ENTER
+&kp Z      &kp X         &kp C         &kp V                        &kp B        &lt 10 TAB       &lt 8 SLASH    &kp N                            &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT MINUS
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT INT_MUHENKAN  &lt 4 SPACE  &lt 3 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT INTERNATIONAL_4                             &mt LEFT_CONTROL LEFT_BRACKET
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -299,10 +307,21 @@
 
         MacDefault {
             bindings = <
-&kp Q             &kp W      &kp E         &kp R                      &kp T                                        &kp Y                       &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S      &kp D         &kp F                      &kp G        &mkp MB3         &kp BACKSPACE  &kp H                       &kp J  &kp K      &kp L    &lt 9 ENTER
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V                      &kp B        &lt 9 TAB        &lt 7 SLASH    &kp N                       &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT MINUS
-&kp LEFT_WIN      &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 8 SPACE  &lt 2 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT LANGUAGE_1                             &mt LEFT_WIN AT_SIGN
+&kp Q         &kp W      &kp E         &kp R                      &kp T                                        &kp Y                       &kp U  &kp I      &kp O    &kp P
+&kp A         &kp S      &kp D         &kp F                      &kp G        &mkp MB3         &kp BACKSPACE  &kp H                       &kp J  &kp K      &kp L    &kp ENTER
+&kp Z         &kp X      &kp C         &kp V                      &kp B        &lt 10 TAB       &lt 8 SLASH    &kp N                       &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT MINUS
+&kp LEFT_WIN  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 9 SPACE  &lt 3 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT LANGUAGE_1                             &mt LEFT_WIN AT_SIGN
+            >;
+
+            sensor-bindings = <&encoder_msc_down_up>;
+        };
+
+        Anddefault {
+            bindings = <
+&kp Q         &kp W      &kp E         &kp R                      &kp T                                        &kp Y                       &kp U  &kp I      &kp O    &kp P
+&kp A         &kp S      &kp D         &kp F                      &kp G        &mkp MB3         &kp BACKSPACE  &kp H                       &kp J  &kp K      &kp L    &kp ENTER
+&kp Z         &kp X      &kp C         &kp V                      &kp B        &lt 10 TAB       &lt 8 SLASH    &kp N                       &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT MINUS
+&kp LEFT_WIN  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 9 SPACE  &lt 3 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT LANGUAGE_1                             &mt LEFT_WIN LEFT_BRACKET
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
@@ -313,7 +332,7 @@
 &kp EQUAL              &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LS(SQT)                                                    &kp DOT    &kp ASTERISK  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9
 &kp LEFT_PARENTHESIS   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS          &kp LC(LA(KP_NUMBER_0))      &kp DELETE     &kp SLASH  &kp MINUS     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6
 &kp RIGHT_PARENTHESIS  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp LS(SEMICOLON)  &kp EQUAL                    &kp LS(SLASH)  &kp EQUAL  &kp PLUS      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3
-&kp LCTRL              &kp KP_NUMBER_0  &kp SLASH        &trans           &lt 6 SPACE        &trans                       &lt 6 SPACE    &trans                                               &kp NUMBER_0
+&kp LCTRL              &kp KP_NUMBER_0  &kp SLASH        &trans           &lt 7 SPACE        &trans                       &lt 7 SPACE    &trans                                               &kp NUMBER_0
             >;
 
             sensor-bindings = <&encoder_msc_left_right>;
@@ -324,7 +343,7 @@
 &kp LS(NUMBER_1)    &kp LS(NUMBER_2)    &kp LS(NUMBER_3)     &kp LS(NUMBER_4)     &kp LS(N5)                                          &kp LS(NUMBER_6)       &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
 &kp HOME            &kp LA(LEFT_ARROW)  &kp UP_ARROW         &kp LA(RIGHT_ARROW)  &GUID       &GUID            &kp DELETE             &kp MINUS              &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
 &kp LEFT_SHIFT      &kp LEFT_ARROW      &kp DOWN_ARROW       &kp RIGHT_ARROW      &macpass    &pcpass          &kp SEMI               &kp LS(MINUS)          &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
-&kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)    &kp LG(RIGHT_ARROW)  &kp LG(DOWN_ARROW)   &trans      &lt 6 ENTER      &JRAticketSmartsheet1  &JRAticketSmartsheet2                                                         &kp LS(INT_RO)
+&kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)    &kp LG(RIGHT_ARROW)  &kp LG(DOWN_ARROW)   &trans      &lt 7 ENTER      &JRAticketSmartsheet1  &JRAticketSmartsheet2                                                         &kp LS(INT_RO)
             >;
 
             sensor-bindings = <&inc_dec_kp LA(LEFT_ARROW) LA(RIGHT_ARROW)>;
@@ -334,7 +353,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mo 5   &mkp MB2  &mkp MB3
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mo 6   &mkp MB2  &mkp MB3
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
         };
@@ -375,7 +394,7 @@
 &kp LS(NUMBER_1)        &kp LS(NUMBER_2)      &kp LS(NUMBER_3)         &kp LS(NUMBER_4)        &kp LS(N5)                                             &kp LS(NUMBER_6)       &kp LS(NUMBER_7)  &kp LS(NUMBER_8)  &kp LS(NUMBER_9)   &kp LS(NUMBER_0)
 &kp SEMICOLON           &kp LG(LEFT_ARROW)    &kp UP_ARROW             &kp LG(RIGHT_ARROW)     &macpass      &macpass          &kp SQT                &kp MINUS              &kp EQUAL         &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH
 &kp LS(SEMI)            &kp LEFT_ARROW        &kp DOWN_ARROW           &kp RIGHT_ARROW         &onepassword  &onepassword      &kp LS(SQT)            &kp LS(MINUS)          &kp LS(EQUAL)     &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LS(BACKSLASH)
-&kp LG(LA(LEFT_ARROW))  &kp LA(LG(UP_ARROW))  &kp LA(LG(RIGHT_ARROW))  &kp LA(LG(DOWN_ARROW))  &trans        &lt 6 ENTER       &JRAticketSmartsheet1  &JRAticketSmartsheet2                                                         &kp UNDERSCORE
+&kp LG(LA(LEFT_ARROW))  &kp LA(LG(UP_ARROW))  &kp LA(LG(RIGHT_ARROW))  &kp LA(LG(DOWN_ARROW))  &trans        &lt 7 ENTER       &JRAticketSmartsheet1  &JRAticketSmartsheet2                                                         &kp UNDERSCORE
             >;
 
             sensor-bindings = <&inc_dec_kp LG(LEFT_ARROW) RG(RIGHT_ARROW)>;
@@ -383,9 +402,9 @@
 
         layer_9 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &lt 5 I   &trans    &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &lt 6 I   &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mo 5     &mkp MB2  &mkp MB3
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mo 6     &mkp MB2  &mkp MB3
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
