@@ -333,7 +333,7 @@
 &kp LEFT_WIN  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 9 SPACE  &lt 3 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT LANGUAGE_1                             &mt LEFT_WIN LEFT_BRACKET
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&encoder_msc_up_down>;
         };
 
         NUM {
