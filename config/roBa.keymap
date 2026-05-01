@@ -99,6 +99,11 @@
             bindings = <&trans>;
             key-positions = <34 30 31 32 33 42>;
         };
+
+        ShiftTAB {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <0 1 2>;
+        };
     };
 
     macros {
