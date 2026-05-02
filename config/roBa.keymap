@@ -198,6 +198,13 @@
             bindings = <&trans &exit_AML>;
             label = "KE_EXIT_AML_TR";
         };
+
+        JRAticketSmartsheet3: JRAticketSmartsheet3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TAB &kp LEFT_SHIFT &kp ENTER &kp TAB &kp TAB &kp TAB &kp ENTER>;
+            label = "JRATICKETSMARTSHEET3";
+        };
     };
 
     behaviors {
@@ -270,10 +277,10 @@
 
         WIN-default_layer {
             bindings = <
-&kp Q      &kp W         &kp E         &kp R                        &kp T                                        &kp Y                            &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S         &kp D         &kp F                        &kp G        &mkp MB3         &kp BACKSPACE  &kp H                            &kp J  &kp K      &kp L    &lt 9 ENTER
-&kp Z      &kp X         &kp C         &kp V                        &kp B        &lt 9 TAB        &lt 7 SLASH    &kp N                            &kp M  &kp COMMA  &kp DOT  &kp MINUS
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 2 ENTER      &lt 6 SPACE    &mt RIGHT_SHIFT INTERNATIONAL_4                             &mt LEFT_CONTROL LEFT_BRACKET
+&kp Q      &kp W         &kp E         &kp R                        &kp T                                                &kp Y                  &kp U  &kp I      &kp O    &kp P
+&kp A      &kp S         &kp D         &kp F                        &kp G        &mkp MB3         &JRAticketSmartsheet3  &kp H                  &kp J  &kp K      &kp L    &lt 9 ENTER
+&kp Z      &kp X         &kp C         &kp V                        &kp B        &lt 9 TAB        &lt 7 SLASH            &kp LG(R)              &kp M  &kp COMMA  &kp DOT  &kp MINUS
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT INT_MUHENKAN  &lt 3 SPACE  &lt 2 ENTER      &JRAticketSmartsheet1  &JRAticketSmartsheet2                             &mt LEFT_CONTROL LEFT_BRACKET
             >;
 
             sensor-bindings = <&encoder_msc_down_up>;
