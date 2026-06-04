@@ -316,7 +316,7 @@
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT INT_MUHENKAN  &lt 6 SPACE  &lt 3 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT INTERNATIONAL_4                             &mt LEFT_CONTROL LEFT_BRACKET
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&encoder_msc_up_down>;
         };
 
         MacDefault {
@@ -327,7 +327,7 @@
 &kp LEFT_WIN  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 9 SPACE  &lt 3 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT LANGUAGE_1                             &mt LEFT_WIN AT_SIGN
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&encoder_msc_up_down>;
         };
 
         Anddefault {
@@ -338,7 +338,7 @@
 &kp LEFT_WIN  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 9 SPACE  &lt 3 ENTER      &kp BACKSPACE  &mt RIGHT_SHIFT LANGUAGE_1                             &mt LEFT_WIN LEFT_BRACKET
             >;
 
-            sensor-bindings = <&encoder_msc_up_down>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         NUM {
